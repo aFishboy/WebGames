@@ -38,6 +38,6 @@ main {
 }
 
 .slot {
-    background-color: lightgrey;
+    background-color: rgb(218, 213, 213);
     border-radius: 7%;
 }
