@@ -1,3 +1,5 @@
+"use strict";
+
 import Tile from "./Tile.js";
 
 export default class Slot {

@@ -1,3 +1,5 @@
+"use strict";
+
 const tileColors = [
     "#aad6fe",
     "#8bc6ef",

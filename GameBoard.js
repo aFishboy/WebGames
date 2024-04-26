@@ -1,3 +1,5 @@
+"use strict";
+
 import Slot from "./Slot.js";
 import Tile from "./Tile.js";
 
