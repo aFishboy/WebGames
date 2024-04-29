@@ -18,6 +18,13 @@ export default class Slot {
         return this.#tile;
     }
 
+    get row() {
+        return this.#row;
+    }
+    get col() {
+        return this.#col;
+    }
+
     set tile(val) {
         this.#tile = val;
         if (val == null) return;

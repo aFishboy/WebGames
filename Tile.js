@@ -29,6 +29,10 @@ export default class Tile {
         this.value = v;
     }
 
+    get value() {
+        return this.#value;
+    }
+
     set row(v) {
         this.#row = v;
         this.#tileElement.style.setProperty("--row", v);

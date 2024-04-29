@@ -19,7 +19,7 @@ export default class GameBoard {
             `${BORDER_RADIUS}vmin`
         );
 
-        this.slots = createBoardSlots(gameBoardElement).map(
+        this.#slots = createBoardSlots(gameBoardElement).map(
             (slotElements, index) => {
                 return new Slot(
                     slotElements,
@@ -28,6 +28,10 @@ export default class GameBoard {
                 );
             }
         );
+    }
+
+    get slots() {
+        return this.#slots;
     }
 
     get #emptySlots() {
@@ -39,8 +43,10 @@ export default class GameBoard {
         return this.#emptySlots[randomIndex];
     }
 
+    get slotsAsColumns() {}
+
     createStartingTiles(gameBoardElement) {
-        console.log(this.#randomEmptySlot.tile = new Tile(gameBoardElement));
+        this.#randomEmptySlot.tile = new Tile(gameBoardElement);
         this.#randomEmptySlot.tile = new Tile(gameBoardElement);
     }
 }
