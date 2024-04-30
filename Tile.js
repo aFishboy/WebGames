@@ -51,4 +51,8 @@ export default class Tile {
         if (stage >= 8)
             this.#tileElement.style.setProperty("--text-color", "#F0F7FF");
     }
+
+    removeTile() {
+        this.#tileElement.remove();
+    }
 }

@@ -3,7 +3,7 @@
 import Slot from "./Slot.js";
 import Tile from "./Tile.js";
 
-const GRID_SIZE = 4;
+const GRID_SIZE = 2;
 const SLOT_SIZE = 15;
 const GAP = 2;
 const BORDER_RADIUS = 0.75;
@@ -43,10 +43,28 @@ export default class GameBoard {
         return this.#emptySlots[randomIndex];
     }
 
-    get slotsAsColumns() {}
+    get slotsAsRows() {
+        return this.#slots.reduce((slot2dArray, slot) => {
+            slot2dArray[slot.row] = slot2dArray[slot.row] || [];
+            slot2dArray[slot.row][slot.col] = slot;
+            return slot2dArray;
+        }, []);
+    }
+
+    get slotsAsColumns() {
+        return this.#slots.reduce((slot2dArray, slot) => {
+            slot2dArray[slot.col] = slot2dArray[slot.col] || [];
+            slot2dArray[slot.col][slot.row] = slot;
+            return slot2dArray;
+        }, []);
+    }
 
     createStartingTiles(gameBoardElement) {
         this.#randomEmptySlot.tile = new Tile(gameBoardElement);
+        this.#randomEmptySlot.tile = new Tile(gameBoardElement);
+    }
+
+    createNewTile(gameBoardElement){
         this.#randomEmptySlot.tile = new Tile(gameBoardElement);
     }
 }
