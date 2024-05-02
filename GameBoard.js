@@ -5,7 +5,7 @@ import Slot from "./Slot.js";
 import Tile from "./Tile.js";
 
 // Constants defining the game board layout
-const GRID_SIZE = 2;
+const GRID_SIZE = 4;
 const SLOT_SIZE = 15;
 const GAP = 2;
 const BORDER_RADIUS = 0.75;
