@@ -1,29 +1,47 @@
 "use strict";
 
+// Importing GameBoard class from GameBoard.js module
 import GameBoard from "./GameBoard.js";
 
+// Selecting the game board element
 const gameBoardElement = document.querySelector("#game-board");
+const gameOverMessage = document.getElementById("gameOverMessage");
+const restartButton = document.getElementById("restartButton");
+const scoreBoardElement = document.querySelector("#scoreboard");
+
+// Creating a new instance of GameBoard and initializing the game
 let gameBoard = new GameBoard(gameBoardElement);
 gameBoard.createStartingTiles(gameBoardElement);
+
+
+// Enable key listener to handle user input
 enableKeyListener();
 
+let currentScore = 0;
 
+// Function to handle game loss
 function gameLose() {
-    alert("NEED TO ADD"); ////////////////////////////////////////////////////////
-    restartGame();
+    gameOverMessage.classList.add("show");
+    window.removeEventListener("keydown", handleUserInput);
+    restartButton.addEventListener("click", restartGame)
 }
 
-function restartGame(){
-    gameBoardElement.innerHTML = "";
-    gameBoard = new GameBoard(gameBoardElement);
-    gameBoard.createStartingTiles(gameBoardElement);
-    enableKeyListener();
+// Function to restart the game
+function restartGame() {
+    gameOverMessage.classList.remove("show");
+    gameBoardElement.innerHTML = ""; // Clearing the game board
+    scoreBoardElement.innerHTML = "<p>Score: 0<p>"
+    gameBoard = new GameBoard(gameBoardElement); // Creating a new instance of GameBoard
+    gameBoard.createStartingTiles(gameBoardElement); // Creating starting tiles
+    enableKeyListener(); // Re-enabling key listener
 }
 
+// Function to enable key listener
 function enableKeyListener() {
-    window.addEventListener("keydown", handleUserInput, { once: true });
+    window.addEventListener("keydown", handleUserInput, { once: true }); // Listening for keydown event once
 }
 
+// Function to handle user input
 function handleUserInput(event) {
     switch (event.key) {
         case "ArrowUp":
@@ -58,16 +76,24 @@ function handleUserInput(event) {
             enableKeyListener();
             return;
     }
-    gameBoard.slots.forEach((slot) => slot.mergeTiles());
+    // Merging tiles and creating new tile
+    for (const slot of gameBoard.slots) {
+        const returnedScore = slot.mergeTiles();
+        if (returnedScore != null) currentScore += returnedScore;
+    }
+    // gameBoard.slots.forEach((slot) => slot.mergeTiles());
+    scoreBoardElement.innerHTML = `<p>Score: ${currentScore}<p>`;
     gameBoard.createNewTile(gameBoardElement);
 
+    // Checking if the game cannot move anymore, signaling game over
     if (cannotMove()) {
         gameLose();
     }
 
-    enableKeyListener();
+    enableKeyListener(); // Re-enabling key listener
 }
 
+// Function to check if the game cannot move in any direction
 function cannotMove() {
     return (
         !canMoveInDirectionUp() &&
@@ -76,6 +102,8 @@ function cannotMove() {
         !canMoveInDirectionRight()
     );
 }
+
+// Function to check if tiles can move in a given direction
 function ableToMoveDirection(slots) {
     return slots.some((array) => {
         return array.some((slot, index) => {
@@ -86,6 +114,7 @@ function ableToMoveDirection(slots) {
     });
 }
 
+// Functions to check if tiles can move in specific directions
 function canMoveInDirectionUp() {
     return ableToMoveDirection(gameBoard.slotsAsColumns);
 }
@@ -109,6 +138,8 @@ function canMoveInDirectionRight() {
         })
     );
 }
+
+// Function to slide tiles in a given direction
 function slideTiles(slots) {
     slots.forEach((sliceOf2dArray) => {
         for (let i = 1; i < sliceOf2dArray.length; ++i) {
@@ -134,6 +165,7 @@ function slideTiles(slots) {
     });
 }
 
+// Functions to slide tiles in specific directions
 function slideUp() {
     return slideTiles(gameBoard.slotsAsColumns);
 }

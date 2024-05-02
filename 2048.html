@@ -28,9 +28,19 @@
             <strong class="game-title">2048 Clone</strong>
             <span class="author-name">by Sam Howard</span>
         </h2>
-        <main>
-            <section id="game-board"></section>
-        </main>
+        <div id="content">
+            <section id="scoreboard">
+                <p>Score: 0</p>
+            </section>
+            <main>
+                <section id="game-board"></section>
+            </main>
+        </div>
+        <div id="gameOverMessage" class="hidden">
+            <p>You lose! Game over.</p>
+            <button id="restartButton">Restart</button>
+        </div>
+        
         <script src="home.js" type="module"></script>
         <script src="2048-Game-Logic.js" type="module"></script>
     </body>
