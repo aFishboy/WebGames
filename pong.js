@@ -21,9 +21,9 @@ let ball = new Ball(canvas);
 // Event listener to track mouse movement
 document.addEventListener("mousemove", (event) => {
     let mouseY =
-        event.clientY - canvas.getBoundingClientRect().top - paddleHeight / 2;
+        event.clientY - canvas.getBoundingClientRect().top - paddle.paddleHeight / 2;
     if (mouseY)
-        paddleY = Math.min(canvas.height - paddleHeight, Math.max(0, mouseY));
+        paddle.paddleY = Math.min(canvas.height - paddle.paddleHeight, Math.max(0, mouseY));
 });
 
 
