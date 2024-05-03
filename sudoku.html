@@ -4,8 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="2048-styles.css" />
-        <title>ECS 162 Assignment 2</title>
+        <link rel="stylesheet" href="sudoku.css" />
+        <title>Sudoku Game</title>
+        <!-- Code used from MIT License Copyright (c) 2023 BogdanMoale -->
     </head>
     <body>
         <header>
@@ -25,28 +26,23 @@
             </nav>
         </header>
         <h2>
-            <strong class="game-title">2048 Clone</strong>
-            <span class="author-name">by Sam Howard</span>
+            <strong class="game-title">Sudoku Clone</strong>
+            <span class="author-name">by Sam Howard and BogdanMoale</span>
         </h2>
-        <div id="content">
-            <section id="scoreboard">
-                <p>Score: 0</p>
-            </section>
-            <main>
-                <section id="game-board"></section>
-            </main>
-        </div>
-        <div id="gameOverMessage" class="hidden">
-            <p>You lose! Game over.</p>
-            <button id="restartButton">Restart</button>
-        </div>
+        <main>
+            <div class="container">
+                <div id="grid" class="grid grid-9x6"></div>
+                <button id="solveButton">Solve</button>
+                <button id="generateButton">Generate</button>
+            </div>
+        </main>
         <footer>
             <p>
-                © 2024 Samuel Howard
+                Portions of this page © 2024 Samuel Howard, other attributions
+                cited in document or page source
             </p>
         </footer>
-        
-        <script src="menu.js" type="module"></script>
-        <script src="2048-Game-Logic.js" type="module"></script>
+        <script src="sudoku.js"></script>
+        <script src="menu.js"></script>
     </body>
 </html>
