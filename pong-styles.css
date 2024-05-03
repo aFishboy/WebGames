@@ -10,13 +10,16 @@
 
 main {
     text-align: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: white;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
     position: fixed;
 
+}
+
+#gameCanvas {
+    background-color: rgb(248, 166, 248);
 }
