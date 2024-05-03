@@ -78,7 +78,7 @@ export default class GameBoard {
     }
 
     // Method to create a new tile
-    createNewTile(gameBoardElement){
+    createNewTile(gameBoardElement) {
         this.#randomEmptySlot.tile = new Tile(gameBoardElement);
     }
 }

@@ -141,7 +141,7 @@ function controlNPCPaddle() {
     let speed = 0.08;
 
     let randomError = Math.random();
-    let errorThreshold = window.innerWidth > 500 ? 0.70 : 0.30;
+    let errorThreshold = window.innerWidth > 500 ? 0.7 : 0.3;
 
     if (randomError < errorThreshold) {
         return;
