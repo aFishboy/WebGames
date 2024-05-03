@@ -12,7 +12,7 @@ export default class Ball {
         this.canvas = canvas;
         this.ballWidth = 7;
         this.ballHeight = 7;
-        this.#reset();
+        this.reset();
     }
 
     // Public method to draw the ball on the canvas
@@ -38,12 +38,11 @@ export default class Ball {
     }
 
     // Private method to reset ball position and velocity
-    #reset() {
+    reset() {
         this.#ballX = (this.canvas.width - this.ballWidth) / 2;
         this.#ballY = (this.canvas.height - this.ballHeight) / 2;
-        let velocity = Math.random() < 0.5 ? 1.2 : -1.2;
-        this.#ballXVelocity = velocity; // random starting velocity of -50 to 50
-        this.#ballYVelocity = velocity;
+        this.#ballXVelocity = Math.random() < 0.5 ? 1.2 : -1.2;
+        this.#ballYVelocity = Math.random() < 0.5 ? 1.2 : -1.2;
     }
 
     get ballWidth() {

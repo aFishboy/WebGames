@@ -5,22 +5,30 @@ export default class Paddle {
     #paddleY;
     #paddleWidth;
     #paddleHeight;
+    #score;
 
-    constructor(canvas) {
+    constructor(canvas, xPosition) {
         this.canvas = canvas;
-        this.#paddleWidth = 5;
+        this.#paddleWidth = 9;
         this.#paddleHeight = 50;
-        this.#reset();
+        this.paddleX = xPosition;
+        this.reset();
     }
 
-    #reset() {
+    reset() {
         this.paddleY = (this.canvas.height - this.paddleHeight) / 2;
+        this.score = 0;
     }
 
     draw(ctx) {
         this.#update();
         ctx.fillStyle = "black";
-        ctx.fillRect(7, this.paddleY, this.paddleWidth, this.paddleHeight);
+        ctx.fillRect(
+            this.paddleX,
+            this.paddleY,
+            this.paddleWidth,
+            this.paddleHeight
+        );
     }
 
     #update() {
@@ -41,5 +49,29 @@ export default class Paddle {
 
     set paddleHeight(h) {
         this.#paddleHeight = h;
+    }
+
+    get paddleY() {
+        return this.#paddleY;
+    }
+
+    set paddleY(y) {
+        this.#paddleY = y;
+    }
+
+    get paddleX() {
+        return this.#paddleX;
+    }
+
+    set paddleX(x) {
+        this.#paddleX = x;
+    }
+
+    get score() {
+        return this.#score;
+    }
+
+    set score(s) {
+        this.#score = s;
     }
 }

@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pong Arcade Game</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="pong-styles.css" />
-
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <a href="home-page.html" id="arcade-header-link">Game Arcade</a>
-            <ul class="nav-menu">
-                <a href="2048.html" class="nav-link">2048</a>
-                <a href="pong.html" class="nav-link">Pong</a>
-                <a href="#" class="nav-link">Game3</a>
-                <a href="#" class="nav-link">Game4</a>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pong Arcade Game</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="pong-styles.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="home-page.html" id="arcade-header-link">Game Arcade</a>
+                <ul class="nav-menu">
+                    <a href="2048.html" class="nav-link">2048</a>
+                    <a href="pong.html" class="nav-link">Pong</a>
+                    <a href="#" class="nav-link">Game3</a>
+                    <a href="#" class="nav-link">Game4</a>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+        <h2>
+            <strong class="game-title">Pong Clone</strong>
+            <span class="author-name">by Sam Howard</span>
+        </h2>
+        <main>
+            <canvas id="gameCanvas"></canvas>
+        </main>
+        <section>
+            <div>
+                <p id="p-score"></p>
+                <p id="npc-score"></p>
             </div>
-        </nav>
-    </header>
-    <h2>
-        <strong class="game-title">Pong Clone</strong>
-        <span class="author-name">by Sam Howard</span>
-    </h2>
-    <main>
-        <canvas id="gameCanvas"></canvas>
-    </main>
-    <script src="pong.js" type="module"></script>
-    <script src="menu.js" type="module"></script>
-</body>
+        </section>
+        <footer>
+            <p>
+                Portions of this page © 2024 Samuel Howard, other attributions
+                cited in document or page source
+            </p>
+        </footer>
+        <script src="pong.js" type="module"></script>
+        <script src="menu.js" type="module"></script>
+    </body>
 </html>

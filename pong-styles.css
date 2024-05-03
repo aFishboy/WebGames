@@ -10,16 +10,39 @@
 
 main {
     text-align: center;
+    margin-top: 5vw;
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     background-color: white;
     display: flex;
     justify-content: center;
-    align-items:flex-start;
-    position: fixed;
-
+    align-items: flex-start;
 }
 
 #gameCanvas {
-    background-color: rgb(248, 166, 248);
+    background-color: #8bc6ef;
+}
+
+footer {
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+section div p {
+    padding-left: 5vmin;
+    padding-right: 5vmin;
 }
