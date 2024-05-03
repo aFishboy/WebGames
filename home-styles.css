@@ -1,3 +1,28 @@
+main {
+    margin-top: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.game {
+    border: black 2px solid;
+    border-radius: 2vmin;
+    width: 45%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.game img {
+    width: 100%;
+}
+
+.game p {
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0px;
+}
+
 footer {
     margin-top: 3vh;
     display: flex;

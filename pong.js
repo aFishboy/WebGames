@@ -7,7 +7,7 @@ import Paddle from "./pong-paddle.js";
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth * 0.85;
+canvas.width = window.innerWidth > 500 ? 500 : window.innerWidth * 0.95;
 canvas.height = window.innerHeight * 0.6;
 
 // Define paddle
@@ -78,7 +78,7 @@ function handleCollision() {
 }
 
 function update() {
-    canvas.width = window.innerWidth * 0.85;
+    canvas.width = window.innerWidth > 500 ? 500 : window.innerWidth * 0.95;
     canvas.height = window.innerHeight * 0.6;
     controlNPCPaddle();
     handleCollision();
@@ -138,10 +138,10 @@ function controlNPCPaddle() {
 
     let distanceY = targetY - npcPaddle.paddleY;
 
-    let speed = 0.09;
+    let speed = 0.08;
 
     let randomError = Math.random();
-    let errorThreshold = 0.75;
+    let errorThreshold = window.innerWidth > 500 ? 0.70 : 0.30;
 
     if (randomError < errorThreshold) {
         return;

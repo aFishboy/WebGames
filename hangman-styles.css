@@ -1,14 +1,37 @@
-.game-title {
-    font-size: 2em;
-    font-weight: 600;
-    padding-right: 0.8vw;
+main {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.word-display {
+    margin: 20px;
+    font-size: 24px;
+    text-align: center;
 }
 
-.author-name {
-    font-weight: 500;
+main p {
+    font-size: 2em;
+    margin: 3vmin;
+}
+input {
+    border: black 2px solid;
+    margin-bottom: 3vmin;
+}
+button {
+    margin-bottom: 0vmin;
 }
 
 #word-display {
-    margin: 20px;
-    font-size: 24px;
+    font-size: 2em;
+}
+
+#message {
+    text-align: center;
+    
+}
+
+#hangman {
+    font-size: 1.5em;
+    white-space: pre-wrap;
 }

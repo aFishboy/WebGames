@@ -14,13 +14,7 @@ main {
     align-items: center;
 }
 
-footer {
-    margin-top: 3vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+
 
 #content {
     display: flex;

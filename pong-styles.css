@@ -23,14 +23,6 @@ main {
     background-color: #8bc6ef;
 }
 
-footer {
-    margin-top: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 section {
     display: flex;
     justify-content: center;

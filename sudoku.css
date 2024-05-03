@@ -8,16 +8,6 @@ main {
   min-height: 60vh;
 }
 
-.game-title {
-  font-size: 2em;
-  font-weight: 600;
-  padding-right: 0.8vw;
-}
-
-.author-name {
-  font-weight: 500;
-}
-
 .container {
   text-align: center;
 }
@@ -30,6 +20,14 @@ main {
   background-color: #ddd;
   margin-top: 20px;
   border: 2px solid #000;
+}
+
+/* Adjust grid size for smaller screens */
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(9, 30px); /* Adjust cell width for smaller screens */
+    grid-template-rows: repeat(9, 30px); /* Adjust cell height for smaller screens */
+  }
 }
 
 .cell {
@@ -79,3 +77,4 @@ button {
 .cell.invalid {
   background-color: #f5c4c4; /* Light red for invalid cells */
 }
+

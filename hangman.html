@@ -28,24 +28,21 @@
             <strong class="game-title">Hangman Clone</strong>
             <span class="author-name">by Sam Howard</span>
         </h2>
-        <h1>Hangman Game</h1>
-        <div id="word-display"></div>
-        <p>Guess a letter:</p>
-        <input type="text" id="guess-input" maxlength="1" />
-        <button onclick="checkGuess()">Submit Guess</button>
-        <p id="message"></p>
-        <div id="hangman">
-            <pre id="hangman-drawing">
-   _______
-  |/      |
-  |      
-  |      
-  |        
-  |       
-__|__
-</pre
-            >
-        </div>
+
+        <main>
+            <p>Guess a letter:</p>
+            <input type="text" id="guess-input" maxlength="1" />
+            <button id="button">Submit Guess</button>
+            <div id="hangman"></div>
+            <div id="word-display"></div>
+            <p id="message"></p>
+        </main>
+
+        <footer>
+            <p>
+                © 2024 Samuel Howard
+            </p>
+        </footer>
 
         <script src="menu.js" type="module"></script>
         <script src="hangman.js"></script>
