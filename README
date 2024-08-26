@@ -1,2 +1,18 @@
 # Game Arcade!
-## 2048, Pong Sudoku and Hangman created with responsive web design.
+
+## Overview
+Welcome to the **Game Arcade**! This project features four classic games—**2048**, **Pong**, **Sudoku**, and **Hangman**—developed using JavaScript, HTML, and CSS. Each game is designed with responsive web design principles, ensuring a smooth experience on various devices.
+
+## Games Included
+- **2048**: Slide numbered tiles on a grid to combine them and create a tile with the number 2048.
+- **Pong**: A simple two-player game where you control paddles to hit a ball back and forth.
+- **Sudoku**: A number puzzle game where you fill a 9x9 grid with numbers so that each column, row, and 3x3 section contain the digits from 1 to 9.
+- **Hangman**: Guess the word by selecting letters before the entire hangman figure is drawn.
+
+## Technologies Used
+- **JavaScript**: Game logic and interactivity.
+- **HTML**: Structure and content of the web pages.
+- **CSS**: Styling and responsive design.
+
+## How to Run the Games
+To play these games locally go to https://afishboy.github.io/WebGames/2048.html
